@@ -1,0 +1,117 @@
+digraph G {
+
+
+    // SQLite
+    subgraph cluster_sqlite {
+        label="SQLite";
+        color=blue;
+        
+        sqlite_exe[label="sqlite3.exe",shape=diamond];
+        ex1_db[label="ex1.db",shape=rectangle];
+    }
+        
+    // Driver
+    subgraph cluster_driver {
+        label="Driver Setup";
+        color=blue;
+        
+        sqlitodbc_exe[label="sqlitodbc.exe",shape=diamond];
+        sqlitodbc_w64_exe[label="sqlitodbc_w64.exe",shape=diamond];
+    }
+    
+    // Windows
+    subgraph cluster_windows {
+        label="Windows";
+        color=blue;
+        
+        subgraph cluster_ODBC32 {
+            label="ODBC 32 bits";
+            color=blue;
+
+            subgraph cluster_ODBC32_pilote {
+                label="pilote";
+                color=blue;
+                
+                ODBC32_pilote_sqlite[label="SQLite3 ODBC Driver",shape=rectangle];
+            }
+            
+            subgraph cluster_ODBC32_datasource_user {
+                label="User Data Source";
+                color=blue;
+                
+                ODBC32_datasource_user_ex1[label="ex1_sqlite3_32bits_sync_NORMAL",shape=rectangle];
+            }
+        }
+        
+        subgraph cluster_ODBC64 {
+            label="ODBC 64 bits";
+            color=blue;
+
+            subgraph cluster_ODBC64_pilote {
+                label="pilote";
+                color=blue;
+                
+                ODBC64_pilote_sqlite[label="SQLite3 ODBC Driver",shape=rectangle];
+            }
+            
+            subgraph cluster_ODBC64_datasource_user {
+                label="User Data Source";
+                color=blue;
+                
+                ODBC64_datasource_user_ex1[label="ex1_sqlite3_64bits_sync_NORMAL",shape=rectangle];
+            }
+        }
+    }
+
+    // Office
+    subgraph cluster_office {
+        color=invis;
+        
+        subgraph cluster_open_office {
+            label="Open Office";
+            color=blue;
+            
+            subgraph cluster_open_office_exe {
+                color=invis;
+                open_office_exe_base[label="sbase.exe",shape=diamond];
+                open_office_exe_calc[label="scalc.exe",shape=diamond];
+            }
+        
+            subgraph cluster_open_office_file {
+                color=invis;
+                open_office_file_ex1_32_odb[label="ex1_sqlite3_32bits_sync_NORMAL.odb",shape=rectangle];
+                open_office_file_ex1_ods[label="ex1.ods",shape=rectangle];
+            }
+        }
+    
+        subgraph cluster_microsoft_office {
+            label="Microsoft Office";
+            color=blue;
+            
+            subgraph cluster_microsoft_office_exe {
+                color=invis;
+                microsoft_office_exe_excel[label="excel.exe",shape=diamond];
+            }
+        
+            subgraph cluster_microsoft_office_file {
+                color=invis;
+                microsoft_office_file_ex1_xlsx[label="ex1.xlsx",shape=rectangle];
+            }
+        }
+    }
+
+    sqlitodbc_exe->ODBC32_pilote_sqlite;
+    sqlitodbc_w64_exe->ODBC64_pilote_sqlite;
+    sqlite_exe->ex1_db[color=red];
+    open_office_exe_base->open_office_file_ex1_32_odb;
+    open_office_exe_calc->open_office_file_ex1_ods;
+    microsoft_office_exe_excel->microsoft_office_file_ex1_xlsx;
+    
+    ex1_db->ODBC32_datasource_user_ex1[color=red];
+    ex1_db->ODBC64_datasource_user_ex1;microsoft_office_file_ex1_xlsx;
+    
+    ODBC32_datasource_user_ex1->open_office_file_ex1_32_odb[color=red];
+    open_office_file_ex1_32_odb->open_office_file_ex1_ods[color=red];
+
+    ODBC32_datasource_user_ex1->microsoft_office_file_ex1_xlsx[color=red];
+}
