@@ -73,12 +73,14 @@ digraph G {
             
             subgraph cluster_open_office_exe {
                 color=invis;
+                label=""
                 open_office_exe_base[label="sbase.exe",shape=diamond];
                 open_office_exe_calc[label="scalc.exe",shape=diamond];
             }
         
             subgraph cluster_open_office_file {
                 color=invis;
+                label=""
                 open_office_file_ex1_32_odb[label="ex1_sqlite3_32bits_sync_NORMAL.odb",shape=rectangle];
                 open_office_file_ex1_ods[label="ex1.ods",shape=rectangle];
             }
@@ -89,11 +91,13 @@ digraph G {
             color=blue;
             
             subgraph cluster_microsoft_office_exe {
+                label=""
                 color=invis;
                 microsoft_office_exe_excel[label="excel.exe",shape=diamond];
             }
         
             subgraph cluster_microsoft_office_file {
+                label=""
                 color=invis;
                 microsoft_office_file_ex1_xlsx[label="ex1.xlsx",shape=rectangle];
             }
