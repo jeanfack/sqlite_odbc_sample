@@ -7,34 +7,49 @@
     </style>
     
     <head>
-        <title>Comment construire une base de donnée SQLite sur Windows 10 ?</title>
+        <title>sqlite</title>
     </head>
     
     <body>
         <h1>Comment construire une base de donnée SQLite sur Windows 10 ?</h1>
         <ol>
-            <li>
-                Archive <tt>SQLite_HowTo_sample.zip</tt>:
-                <ol>
-                    <li>Télécharger de <a href="https://github.com/jeanfack">https://github.com/jeanfack</a>.</li>
-                    <li>Décompresser dans <tt>C:</tt>.</li>
-                </ol>            
-            </li>
-            <li>
-                Archive <tt>sqlite-tools-win32-x86-3320300.zip</tt>:
-                <ol>
-                    <li>Télécharger de <a href="https://www.sqlite.org/download.html">https://www.sqlite.org/download.html</a>.</li>
-                    <li>Décompresser dans <tt>C:\SQLite_HowTo_sample</tt>.</li>
-                </ol>            
-            </li>
-            <li>
-                Scripts <tt>.cmd</tt>:
-                <ol>
-                    <li>Lancer <tt>cmd.exe</tt> dans <tt>C:\SQLite_HowTo_sample\scripts</tt>.<br><br></li>
-                    <li>Executer <tt>ex1.all.cmd</tt>.<br><br><img src=".\img\A_5_cmd_ex1_all__ANNOTATION.png"><br><br></li>
-                    <li>Executer <tt>ex1.SELECT.cmd</tt>.<br><br><img src=".\img\A_6_cmd_ex1_SELECT.png"><br><br></li>
-                </ol>            
-            </li>
+            <li>Lancer <tt>cmd.exe</tt> dans <tt>C:\sqlite_odbc_sample\scripts</tt>.<br><br></li>
+            
+            <li>Executer <tt>ex1.del.cmd</tt>.<br>
+            => Supprime le fichier <tt>ex1.db</tt>.
+            <br><br><img src=".\img\ex1.del.cmd.png"><br><br></li>
+            
+            <li>Executer <tt>ex1.new.cmd</tt>.<br>
+            => Crée le fichier <tt>ex1.db</tt> qui contient une base de donnée vide.
+            <br><br><img src=".\img\ex1.new.cmd.png"><br><br></li>
+            
+            <li>Executer <tt>ex1.CREATE.cmd</tt>.<br>
+            => Crée la table <tt>USER</tt>.
+            <br><br><img src=".\img\ex1.CREATE.cmd.png"><br><br></li>
+            
+            <li>Executer <tt>ex1.INSERT.cmd</tt>.<br>
+            => Insère 5 enregistrements dans la table <tt>USER</tt>.
+            <br><br><img src=".\img\ex1.INSERT.cmd.png"><br><br></li>
+            
+            <li>Executer <tt>ex1.SELECT.cmd</tt>.<br>
+            => Affiche la table <tt>USER</tt>.
+            <br><br><img src=".\img\ex1.SELECT.1.cmd.png"><br><br></li>
+            
+            <li>Executer <tt>ex1.INSERT.Charlie.Chaplin.cmd</tt>.<br>
+            => Insert un 6-ème enregistrement dans la table <tt>USER</tt>.
+            <br><br><img src=".\img\ex1.INSERT.Charlie.Chaplin.cmd.png"><br><br></li>
+            
+            <li>Executer <tt>ex1.SELECT.cmd</tt>.<br>
+            => Affiche la table <tt>USER</tt>.
+            <br><br><img src=".\img\ex1.SELECT.2.cmd.png"><br><br></li>
+
+            <li>Executer <tt>ex1.DELETE.Charlie.Chaplin.cmd</tt>.<br>
+            => Insert un 6-ème enregistrement dans la table <tt>USER</tt>.
+            <br><br><img src=".\img\ex1.DELETE.Charlie.Chaplin.cmd.png"><br><br></li>
+
+            <li>Executer <tt>ex1.SELECT.cmd</tt>.<br>
+            => Affiche la table <tt>USER</tt>.
+            <br><br><img src=".\img\ex1.SELECT.3.cmd.png"><br><br></li>
         </ol>
     </body>
 </html>

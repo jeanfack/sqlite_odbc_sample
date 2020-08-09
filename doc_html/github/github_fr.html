@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        <!--OL { counter-reset: item; padding-left: 10px; }-->
+        LI { display: block }
+        LI:before { content: counters(item, ".") " "; counter-increment: item }
+    </style>
+    
+    <head>
+        <title>github</title>
+    </head>
+    
+    <body>
+        <h1>Comment construire une base de donnée SQLite sur Windows 10 ?</h1>
+        <ol>
+                    <li>Installer GitHub Desktop: <a href="https://desktop.github.com/">https://desktop.github.com/</a>.</li>
+                    <li>
+                        Aller dans File->Clone Repository...
+                        <ol>
+                            <li>Saisir url: <tt>https://github.com/jeanfack/sqlite_odbc_sample.git</tt></li>
+                            <li>Parcourir path: <tt>C:\sqlite_odbc_sample</tt></li>
+                            <li>Cliquer sur "Clone".<br><br><img src=".\img\github_desktop__Clone.png"><br><br></li>
+                        </ol>
+                    </li>
+    </body>
+</html>

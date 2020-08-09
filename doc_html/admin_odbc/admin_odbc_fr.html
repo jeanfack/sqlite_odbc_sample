@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        <!--OL { counter-reset: item; padding-left: 10px; }-->
+        LI { display: block }
+        LI:before { content: counters(item, ".") " "; counter-increment: item }
+    </style>
+    
+    <head>
+        <title>admin_odbc</title>
+    </head>
+    
+    <body>
+        <h1>Comment configurer une source de donnée utilisateur sur Windows ?</h1>
+        
+        <ol>
+            <li>
+                Configuration 32 bits :
+                <ol>
+                    <li>Executer <tt>C:\Windows\<b><font color="red">syswow64</font></b>\odbcad32.exe</tt>.</li>
+                    <li>Sélectionner l'onglet "Sources de données utilisateur".</li>
+                    <li>Cliquer sur "Ajouter".<br><br><img src=".\img\1_3__Administrateur_ODBC_32bits__Source_de_donnees_utilisateur__Ajouter.png"><br><br></li>
+                    <li>
+                        Dans la fenêtre Créer une nouvelle source de données :
+                        <ol>
+                            <li>Selectionner "SQLite3 ODBC Driver".</li>
+                            <li>Cliquer sur "Terminer".<br><br><img src=".\img\1_4_2__Administrateur_ODBC_32bits__Creer_une_nouvelle_source_de_donnees__Terminer.png"><br><br></li>
+                        </ol>
+                    </li>
+                    <li>
+                        Dans la fenêtre SQLite3 ODBC DSN Configuration :<br><br><img src=".\img\1_5__Administrateur_ODBC_32bits__SQLite3_ODBC_DSN_Configuration__Ouvrir.png"><br><br>
+                        <ol>
+                            <li>Saisir dans Data Source Name: "ex1_sqlite3_32bits_sync_NORMAL".</li>
+                            <li>Parcourir dans Database Name: "C:\sqlite_odbc_sample\scripts\sqlite\db\ex1.db".</li>
+                            <li>Selectionner dans Sync Mode: "NORMAL".</li>
+                            <li>Cliquer sur "OK".<br><br><img src=".\img\1_5_4__Administrateur_ODBC_32bits__SQLite3_ODBC_DSN_Configuration__OK.png"><br><br></li>
+                        </ol>                                                
+                    </li>
+                    <li>Cliquer sur "OK".<br><br><img src=".\img\1_6__Administrateur_ODBC_32bits__Source_de_donnees_utilisateur__Ok.png"><br><br></li>
+                </ol>
+            </li>
+            
+            <li>
+                Configuration 64 bits :
+                <ol>
+                    <li>Executer <tt>C:\Windows\<b><font color="red">system32</font></b>\odbcad32.exe</tt>.</li>
+                    <li>Sélectionner l'onglet "Sources de données utilisateur".</li>
+                    <li>Cliquer sur "Ajouter".<br><br><img src=".\img\2_3__Administrateur_ODBC_64bits__Source_de_donnees_utilisateur__Ajouter.png"><br><br></li>
+                    <li>
+                        Dans la fenêtre Créer une nouvelle source de données :
+                        <ol>
+                            <li>Selectionner "SQLite3 ODBC Driver".</li>
+                            <li>Cliquer sur "Terminer".<br><br><img src=".\img\2_4_2__Administrateur_ODBC_64bits__Creer_une_nouvelle_source_de_donnees__Terminer.png"><br><br></li>
+                        </ol>
+                    </li>
+                    <li>
+                        Dans la fenêtre SQLite3 ODBC DSN Configuration :<br><br><img src=".\img\5__Administrateur_ODBC_32bits__SQLite3_ODBC_DSN_Configuration__Ouvrir.png"><br><br>
+                        <ol>
+                            <li>Saisir dans Data Source Name: "ex1_sqlite3_64bits_sync_NORMAL".</li>
+                            <li>Parcourir dans Database Name: "C:\sqlite_odbc_sample\scripts\sqlite\db\ex1.db".</li>
+                            <li>Selectionner dans Sync Mode: "NORMAL".</li>
+                            <li>Cliquer sur "OK".<br><br><img src=".\img\2_5_4__Administrateur_ODBC_64bits__SQLite3_ODBC_DSN_Configuration__OK.png"><br><br></li>
+                        </ol>                                                
+                    </li>
+                    <li>Cliquer sur "OK".<br><br><img src=".\img\2_6__Administrateur_ODBC_64bits__Source_de_donnees_utilisateur__Ok.png"><br><br></li>
+                </ol>
+            </li>
+        
+        </ol>
+        
+    </body>
+<html>

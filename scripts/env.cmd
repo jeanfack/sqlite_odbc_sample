@@ -13,5 +13,3 @@ set SQLITE_EXE=%CURRENT_DIR%\..\sqlite-tools-win32-x86-3320300\sqlite3.exe
 
 %CURRENT_DRIVE%
 cd %CURRENT_DIR%
-
-pop
