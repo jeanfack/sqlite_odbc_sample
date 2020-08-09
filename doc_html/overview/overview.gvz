@@ -99,6 +99,7 @@ digraph G {
             subgraph cluster_microsoft_office_file {
                 label=""
                 color=invis;
+                open_microsoft_office_ex1_32_odc[label="ex1_sqlite3_32bits_sync_NORMAL.odc",shape=rectangle];
                 microsoft_office_file_ex1_xlsx[label="ex1.xlsx",shape=rectangle];
             }
         }
@@ -109,6 +110,7 @@ digraph G {
     sqlite_exe->ex1_db[color=red];
     open_office_exe_base->open_office_file_ex1_32_odb;
     open_office_exe_calc->open_office_file_ex1_ods;
+    microsoft_office_exe_excel->open_microsoft_office_ex1_32_odc;
     microsoft_office_exe_excel->microsoft_office_file_ex1_xlsx;
     
     ex1_db->ODBC32_datasource_user_ex1[color=red];
