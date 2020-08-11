@@ -1,4 +1,4 @@
-call %~dp0env.cmd
+call "%~dp0env.cmd"
 
 :: delete database file
 call ex1.del.cmd
